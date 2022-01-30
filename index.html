@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/android-chrome-192x192.png">    
+</head>
+<body clas='flex'>
+    <!-- current balance text -->
+   <section class='flex' id='input-section'>
+        <h2>Current Balance:</h2>
+        <p class='total'>$<span class="display-text">0</span></p>
+        <p class='error'></p>
+    <!-- initial deposit form -->
+        <form class='start-form'> 
+            <input type="number" name="total" id="total" placeholder='Enter Inital Deposit to Start...' step="0.01" required>
+            <button  type='submit'class='start-btn btn'>Submit</button>
+        </form >
+<!-- new expense form -->
+    <form class="expense-form" >
+    
+        <fieldset disabled>
+            <div>
+        <input type="text" id='name' name='name' placeholder="Expense Name" required />
+        <input type="number" class='expense' name='expense' id='expense' placeholder="Total Expense" required step="0.01"/>
+        <select name="action" id="action" required >
+            <option value="deposit">Deposit</option>
+            <option value="withdrawl">Withdrawl</option>
+        </select>
+       </div>
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Expense memo...." ></textarea>
+        <button  type='submit' class='expense-btn btn' >Submit</button>
+    </fieldset>
+    </form>
+
+<!--Transaction list section-->
+</section>
+    <section id="expense-section">
+        <div class="transactions">
+        </div>
+    </section>
+    <script src='script.js'></script>
+</body>
+</html>
